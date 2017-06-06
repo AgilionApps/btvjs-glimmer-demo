@@ -1,0 +1,24 @@
+<div>
+  Hello from the Paris agreement
+</div>
+
+<input value={{newCountry}} onchange={{action updateNewCountry}} />
+<button onclick={{action addCountry}}>Add</button>
+
+<h2>Countries in agreement</h2>
+
+<ul>
+  {{#each countriesInAgreement key="@index" as |country|}}
+    <remove-country
+      @removeCountry={{action removeCountry country}}
+      @country={{country}} />
+  {{/each}}
+</ul>
+
+<h2>Countries not in agreement</h2>
+
+<ul>
+  {{#each countriesNotInAgreement key="@index" as |country|}}
+    <li >{{country}}</li>
+  {{/each}}
+</ul>
